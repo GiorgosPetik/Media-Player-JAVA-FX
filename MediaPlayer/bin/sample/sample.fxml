@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBoxParent" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+      <HBox nodeOrientation="LEFT_TO_RIGHT" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane  prefHeight="160.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+              <items>
+                  <StackPane  prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                          <MediaView fx:id="mediaView"  nodeOrientation="INHERIT" />
+                     </children>
+                  </StackPane>
+                  <ListView fx:id="playListView" minWidth="-Infinity" onMouseClicked="#playListPLay" prefWidth="200.0" />
+              </items>
+            </SplitPane>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER">
+         <children>
+            <Label fx:id="songLabel" alignment="CENTER" prefHeight="17.0" prefWidth="1291.0">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+              <Slider fx:id="sliderTime" style="-fx-cursor: hand;">
+                  <padding>
+                      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                  </padding>
+              </Slider>
+         </children>
+      </VBox>
+        <HBox fx:id="hBoxControls" alignment="CENTER_LEFT">
+            <padding>
+                <Insets bottom="15.0" />
+            </padding>
+            <children>
+                <Separator prefHeight="6.0" prefWidth="70.0" />
+                <ToggleButton fx:id="repeatBtn" mnemonicParsing="false" onAction="#repeatSong">
+                    <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                    </HBox.margin>
+                </ToggleButton>
+                <Separator prefHeight="11.0" prefWidth="70.0" />
+            <Button fx:id="stopBtn" mnemonicParsing="false" onAction="#stopMedia">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="previousBtn" mnemonicParsing="false" onAction="#prevSong">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+                <Button fx:id="buttonPPR" alignment="CENTER" mnemonicParsing="false" style="-fx-cursor: hand;">
+                    <HBox.margin>
+                        <Insets left="15.0" />
+                    </HBox.margin>
+                </Button>
+            <Button fx:id="nextBtn" mnemonicParsing="false" onAction="#nextSong">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+                <Label fx:id="labelCurrentTime">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="labelTotalTime">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets right="10.0" />
+                    </opaqueInsets>
+                </Label>
+                <HBox fx:id="hBoxVolume" alignment="CENTER">
+                    <HBox.margin>
+                        <Insets left="5.0" />
+                    </HBox.margin>
+                    <children>
+                        <Label fx:id="labelVolume" style="-fx-cursor: hand;">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                        </Label>
+                        <Slider fx:id="sliderVolume" max="1.0" style="-fx-cursor: hand;" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                  <Button fx:id="playlistBtn" mnemonicParsing="false" onAction="#playlistCreation" text="Προσθήκη στην Playlist">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Separator prefHeight="14.0" prefWidth="19.0">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Separator prefHeight="8.0" prefWidth="108.0">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <RadioButton fx:id="speedRadioBtn" mnemonicParsing="false" onAction="#speedChange" text="1x Speed" />
+                        <Label fx:id="labelFullScreen">
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                        </Label>
+                    </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+                </HBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>
